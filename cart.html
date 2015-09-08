@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+    <title> Shopping Cart </title>
+      <link rel="stylesheet" type="text/css" href="cart.css"/>
+</head>
+
+<body onload=init()>
+    <div id=head>
+         
+        <img src="assest/logo.png">
+    <h1>Shopping Cart</h1>
+        
+            </div>
+    <div id="container">
+    </div>
+    
+</body>
+    
+    <script type="text/javascript">
+    var image=["assest/shirt.jpg","assest/cloth.png","assest/bag.jpg","assest/laptop.jpg","assest/footware.jpg","assest/jewel.png"];
+        function init()
+        {
+            
+            for(i=0;i<9;i++)
+            {
+         var division = document.createElement("div");
+        var elem = document.createElement("img");
+        elem.setAttribute("src", image[i]);
+        elem.setAttribute("height", "200");
+        elem.setAttribute("width", "200");
+        elem.setAttribute("alt", "image");
+                
+        elem.setAttribute("class","tile");
+                
+        elem.setAttribute("style","float:left;padding:15px;");
+         division.appendChild(elem);
+            document.getElementById("container").appendChild(division);
+        }
+        }
+    </script>
+</html>
