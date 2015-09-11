@@ -3,41 +3,42 @@
 
 <head>
     <title> Shopping Cart </title>
-      <link rel="stylesheet" type="text/css" href="cart.css"/>
+      <link rel="stylesheet" type="text/css" href="css/cart.css"/>
 </head>
 
 <body onload=init()>
     <div id=head>
          
         <img src="assest/logo.png">
-    <h1>Shopping Cart</h1>
+    <h1> Shoppee...</h1>
         
             </div>
+    
     <div id="container">
     </div>
     
-</body>
+    <div id="right_div">
+        <h2 id="h">select required product </h2>
+        <h3 id="n"></h3><br>
+        <h3 id="p"></h3><br>
+        <h3 id="a"></h3><br>
+        <h3 id="t"></h3><br>
+       </div>
     
-    <script type="text/javascript">
-    var image=["assest/shirt.jpg","assest/cloth.png","assest/bag.jpg","assest/laptop.jpg","assest/footware.jpg","assest/jewel.png"];
-        function init()
-        {
+        <div id="shop">
+      <button id="add" type="button">ADD TO CART </button>
+            <button id="cancel" type="button">CANCEL</button>
+        </div>
+         
+        
+        <div id="summary">
             
-            for(i=0;i<9;i++)
-            {
-         var division = document.createElement("div");
-        var elem = document.createElement("img");
-        elem.setAttribute("src", image[i]);
-        elem.setAttribute("height", "200");
-        elem.setAttribute("width", "200");
-        elem.setAttribute("alt", "image");
-                
-        elem.setAttribute("class","tile");
-                
-        elem.setAttribute("style","float:left;padding:15px;");
-         division.appendChild(elem);
-            document.getElementById("container").appendChild(division);
-        }
-        }
+        </div>
+     
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="cart.js">
+        
     </script>
 </html>
