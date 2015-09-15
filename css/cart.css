@@ -1,6 +1,6 @@
 body
 {
-    background-image:url(/home/user/Documents/cart/assest/back.png);
+    background-image:url(../assest/back.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -8,8 +8,8 @@ body
 #head
 {
     width:100%;
-    height: 30%;
-    background-image: url(/home/user/Documents/cart/assest/head.jpg);
+    height:200px;
+    background-image: url(../assest/head.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,25 +28,23 @@ body
 #head h1
 {
     display:inline-block;  
-    padding-left: 300px;
     vertical-align: baseline;
     color: coral;
-    font-size: 40px;
     vertical-align: middle;
     float: right;
-    padding-right: 120px;
     font-size: 70px;
     
 }
 
 #container
 {
-    margin-left: 30px;
+    margin-left: 50px;
     margin-top: 20px;
     display: inline-block;
-    padding: 20px;
-    width: 44%;
-    background-image: url(/home/user/Documents/cart/assest/con.jpg);
+    padding: 30px;
+    width:40%;
+    background-image: url(../assest/con.jpg);
+    align-items: center;
 
 }
 
@@ -62,17 +60,40 @@ body
     text-decoration-color: aliceblue;
 }
 
-#add , #cancel
+#cancel , #add
 {
-    width: 200px;
-    height: 80px;
-    background-color: #FF3333;
-    color: aliceblue;
-    text-emphasis: 10px;
-    font-style: normal;
-    font-size: 25px;
+    height: 80px;;
+    width:200px;
+    border-radius: 5px;
+    float:right;
+    background-color: white;
+    color: cornflowerblue;
+    
 }
 
+#add
+{
+    background-image: url(../assest/addcart1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: right;
+    font-size: 20;
+
+}
+
+#cancel
+{
+    background-image: url(../assest/addcart.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: right;
+    font-size: 20;
+}
+
+#add:hover, #cancel:hover
+{
+    opacity:0.5;
+}
 #right_div
 {
     display: inline-block;
@@ -80,26 +101,141 @@ body
     width: 25%;
     text-align: center;
     color: aliceblue;
-    background-image: url(/home/user/Documents/cart/assest/right.jpg);
+    background-image: url(../assest/right.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 25px;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+    margin-right: 45px;
     padding:10px;
 }
 
-#shop
-{  
-    padding: 30px;
-    float: right;
+.img
+{
+    height: 150;
+    width: 150;
+    float:left;
+    padding:15px;
 }
 
-#footer
+#container img:hover
 {
-    background-image: url(assest/footer.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100px;
-    background-position: center;
-    }
+    opacity: 0.5;
+}
 
+    
+#shop
+{  
+    
+    float: right;
+    height: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media screen and (min-width:800px)
+    {
+        #shop
+        {
+            margin-right: 100px;
+        }
+    }
+@media screen and (min-width:500px) and (max-width: 800px)
+    {
+        
+#head h1
+        {
+            display: inline-block;
+            font-size: 40px;
+            padding-right: 80px;
+        }
+
+#container
+        {
+            margin-left: 10px;
+            width: 40%;
+            align-items: center;
+        }
+        
+#right_div
+            {
+                width:35%;
+                font-size: 12px;
+                margin-right: 10px;
+            }
+                
+.img
+        {
+            height: 80px;
+            width: 80px;
+            padding: 10px;
+        }
+        
+#cancel, #add
+        {
+            width: 25%;
+            font-size: 15;
+            text-align: center;
+        }
+
+#head
+        {
+            height: 120px;
+        }
+
+#head img
+        {
+            display: inline-block;
+            width: 80px;
+        }
+    }
+@media screen and (max-width:500px)
+    {
+        #head
+        {
+            height: 80px;
+        }
+        #head h1
+        {
+            top:5px;
+            font-size: 25px;
+        }
+        #head img
+        {
+            width: 50px;
+            padding: 7px;
+        }
+        .img
+        {
+            height: 100px;
+            width: 100px;
+            padding: 5px;
+        }
+        #container
+        {
+            width: auto;
+            padding: 5px;
+            margin-left: 15px;
+        }
+        #right_div
+        {
+            float: right;
+            font-size: 12px;
+            width: 40%;
+        }
+        #add , #cancel
+        {
+            width: 100px;
+            height: 25px;
+            font-size: 15px;
+            background-image: none;
+            background-color: red;
+            color: aliceblue;
+            text-align: center;
+            padding: none;
+        }
+        #shop
+        {
+            width: 500px;
+    }
+            

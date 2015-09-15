@@ -4,12 +4,12 @@ var current = 0, i = 0, totalCost = 0, images =  [ "assest/jacket.jpg", "assest/
 
 function details(i) {
     "use strict";
-    document.getElementById("h").innerHTML = "Product Details";
-    document.getElementById("n").innerHTML = "NAME: " + itemObjects[i].name;
-    document.getElementById("p").innerHTML = "PRICE: " + itemObjects[i].price;
-    document.getElementById("a").innerHTML = "AVAILABILITY: " + itemObjects[i].availability;
+    $("#h").html("Product Details");
+    $("#n").html("NAME: " + itemObjects[i].name);
+    $("#p").html("PRICE: " + itemObjects[i].price);
+    $("#a").html("AVAILABILITY: " + itemObjects[i].availability);
     current = i;
-    document.getElementById("t").innerHTML = "TOTAL COST: " + totalCost;
+    $("#t").html("TOTAL COST: " + totalCost);
 }
 
 function productBase(name, price) {
@@ -55,28 +55,19 @@ for (i = 0; i < 9; i += 1) {    itemObjects[i] = new Prod(itemNames[i], itemPric
 function init() {
     "use strict";
     for (i = 0; i < 9; i += 1) {
-        var division = document.createElement("div"), elem = document.createElement("img");
-                
-        elem.setAttribute("src", images[i]);
-        elem.setAttribute("height", "150");
-        elem.setAttribute("width", "150");
-        elem.setAttribute("alt", "image");
-        elem.setAttribute("id", i);
-        elem.setAttribute("style", "float:left; padding:15px;");
-                   
-        division.appendChild(elem);
-        document.getElementById("container").appendChild(division);
-        /*document.getElementById(i).addEventListener("click", function (icn) {
-            return function () {
-                details();
-            }(i);
-        }); */
+        var division = $("<div></div>"), elem = $("<img>");
+        division.attr("id",i);
+        $("#container").append(division);
+        
+        $(elem).attr({src:images[i], alt:"www.image.com", id:i}).addClass("img");      
+        $("#"+i).append(elem);
+       
     }
 }
                                                   
 $(document).ready(function () {
     "use strict";
-    $("#container").mouseenter(function () {
+   /* $("#container").mouseenter(function () {
         $("img").mouseenter(function (t) {
             var ele = t.currentTarget.id;
             $("#" + ele).css("opacity", ".5");
@@ -84,17 +75,14 @@ $(document).ready(function () {
         $("img").mouseout(function (e) {
             var ele = e.currentTarget.id;
             $("#" + ele).css("opacity", "1");
-        });
-        $("img").bind("click", function (e) {
+        });*/
+    $("#container").mouseenter(function () {
+        $(".img").bind("click", function (e) {
             details(e.currentTarget.id);
         });
     });
-    
-});
-
-
-$(document).ready(function () {
-    "use strict";
+    });
+/*
     $("#add , #cancel").mouseenter(function () {
         $(this).css("background-color", "#990000");
     });
@@ -102,7 +90,7 @@ $(document).ready(function () {
         $(this).css("background-color", "#FF3333");
     });
 });
-    
-document.getElementById("add").addEventListener("click", itemObjects[current].addCart);
-document.getElementById("cancel").addEventListener("click", itemObjects[current].cancel);
+   */ 
+$("#add").click( itemObjects[current].addCart);
+$("#cancel").click( itemObjects[current].cancel);
         
